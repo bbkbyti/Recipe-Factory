@@ -1,17 +1,24 @@
 
-const RecipeItem = (props) => {
+import { useRouter } from "next/router";
 
-    return(
+const RecipeItem = (props) => {
+    const router = useRouter();
+
+    const showDetailHandler = () => {
+        router.push('/' + props.id)
+    }
+
+    return (
         <>
-        <div>
-            <img src={props.image} alt={props.title} />
-        </div>
-        <div>
-            <h3>{props.title}</h3>
-        </div>
-        <div>
-            <button>Show Recipe Detail</button>
-        </div>
+            <div>
+                <img src={props.image} alt={props.title} />
+            </div>
+            <div>
+                <h3>{props.title}</h3>
+            </div>
+            <div>
+                <button onClick={showDetailHandler}>Show Recipe Detail</button>
+            </div>
         </>
     )
 }
