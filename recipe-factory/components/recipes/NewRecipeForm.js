@@ -1,5 +1,7 @@
 
 import { useRef } from 'react';
+
+import classes from './NewRecipeForm.module.css';
 import Card from '../ui/Card'
 
 const NewRecipeForm = (props) => {
@@ -24,20 +26,20 @@ const NewRecipeForm = (props) => {
 
     return (
         <Card>
-            <form onSubmit={submitHandler}>
-            <div>
+            <form className={classes.form} onSubmit={submitHandler}>
+            <div className={classes.control}>
                 <label htmlFor="title">Dish Name</label>
                 <input type='text' required id='title' ref={titleInputRef} />
             </div>
-            <div>
+            <div className={classes.control}>
                 <label htmlFor="image">Image</label>
                 <input type='url' required id='image' ref={imageInputRef} />
             </div>
-            <div>
+            <div className={classes.control}>
                 <label htmlFor="description">Recipe Description</label>
                 <textarea id='description' required rows='5' ref={descriptionInputRef}></textarea>
             </div>
-            <div>
+            <div className={classes.actions}>
                 <button>Add Recipe</button>
             </div>
         </form>

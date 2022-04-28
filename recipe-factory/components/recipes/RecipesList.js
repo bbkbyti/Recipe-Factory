@@ -2,18 +2,23 @@
 import Card from '../ui/Card';
 import RecipeItem from './RecipeItem'
 
+import classes from './RecipeList.module.css'
+
 const RecipesList = (props) => {
     return (
-        <Card>
-            {props.recipes.map((recipe) => (
-                <RecipeItem
-                    key={recipe.id}
-                    id={recipe.id}
-                    image={recipe.image}
-                    title={recipe.title}
-                />
-            ))}
-        </Card>
+        <ul className={classes.list}>
+            <Card>
+                {props.recipes.map((recipe) => (
+                    <RecipeItem
+                        key={recipe.id}
+                        id={recipe.id}
+                        image={recipe.image}
+                        title={recipe.title}
+                    />
+                ))}
+            </Card>
+        </ul>
+
     )
 }
 export default RecipesList;
