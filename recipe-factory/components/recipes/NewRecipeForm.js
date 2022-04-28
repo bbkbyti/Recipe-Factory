@@ -1,7 +1,7 @@
 
 import { useRef } from 'react';
 
-const NewRecipeForm = () => {
+const NewRecipeForm = (props) => {
     const titleInputRef = useRef();
     const imageInputRef = useRef();
     const descriptionInputRef = useRef();
@@ -13,9 +13,12 @@ const NewRecipeForm = () => {
         const enteredImage = imageInputRef.current.value;
         const enteredDescription = descriptionInputRef.current.value;
 
-        console.log(enteredTitle)
-        console.log(enteredImage);
-        console.log(enteredDescription);
+        const recipeData = {
+            title: enteredTitle,
+            image: enteredImage,
+            description: enteredDescription,
+        }
+        props.onAddRecipe(recipeData);
     }
 
     return (
