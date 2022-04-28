@@ -1,5 +1,6 @@
 
 import { useRef } from 'react';
+import Card from '../ui/Card'
 
 const NewRecipeForm = (props) => {
     const titleInputRef = useRef();
@@ -22,7 +23,8 @@ const NewRecipeForm = (props) => {
     }
 
     return (
-        <form onSubmit={submitHandler}>
+        <Card>
+            <form onSubmit={submitHandler}>
             <div>
                 <label htmlFor="title">Dish Name</label>
                 <input type='text' required id='title' ref={titleInputRef} />
@@ -39,6 +41,8 @@ const NewRecipeForm = (props) => {
                 <button>Add Recipe</button>
             </div>
         </form>
+        </Card>
+        
     )
 }
 export default NewRecipeForm;
