@@ -1,8 +1,17 @@
 
-const RecipesList = () => {
+import RecipeItem from './RecipeItem'
+
+const RecipesList = (props) => {
     return (
         <>
-        <h1>All Recipes</h1>
+            {props.recipes.map((recipe) => (
+                <RecipeItem
+                    key={recipe.id}
+                    id={recipe.id}
+                    image={recipe.image}
+                    title={recipe.title}
+                />
+            ))}
         </>
     )
 }
