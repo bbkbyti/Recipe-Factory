@@ -20,6 +20,9 @@ const RecipeItem = (props) => {
                 <div className={classes.content}>
                     <h3>{props.title}</h3>
                 </div>
+                <div className={classes.content}>
+                    <p>{props.ingredients}</p>
+                </div>
                 <div className={classes.actions}>
                     <button onClick={showDetailHandler}>Show Recipe Detail</button>
                 </div>

@@ -14,6 +14,7 @@ const RecipesList = (props) => {
                         id={recipe.id}
                         image={recipe.image}
                         title={recipe.title}
+                        ingredients={recipe.ingredients}
                     />
                 ))}
             </Card>

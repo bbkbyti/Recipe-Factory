@@ -15,12 +15,13 @@ const NewRecipePage = () => {
             method: 'POST',
             body: JSON.stringify(newData),
             headers: {
-                'Content-Type': 'application/json'
-            }
+                'Content-Type': 'application/json',
+            },
         })
 
         const data = await response.json();
-
+        console.log(data);
+        
         router.push('/');
     }
 

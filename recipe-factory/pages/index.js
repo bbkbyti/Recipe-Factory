@@ -41,6 +41,7 @@ export async function getStaticProps() {
                 image: recipe.image,
                 description: recipe.description,
                 id: recipe._id.toString(),
+                
             }))
         },
         revalidate: 1,
